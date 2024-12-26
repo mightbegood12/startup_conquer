@@ -1,0 +1,86 @@
+/* Default state styles */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&display=swap");
+
+:root {
+  --variable4: #ff0000; /* Replace with your desired color */
+}
+
+body {
+  background-color: #222831;
+}
+
+.heading {
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.land {
+  fill: #cccccc; /* Default grey color */
+  fill-opacity: 1;
+  stroke: black; /* Black border */
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Small box-shadow */
+  transition: fill 0.3s, box-shadow 0.3s; /* Smooth transition for color and box-shadow */
+}
+
+/* Hover effect - change color */
+.land:hover {
+  fill: var(--variable4); /* Replace with your specific variable or color */
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+/* Style for custom tooltip */
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 100;
+}
+
+path:hover + .tooltip {
+  display: block;
+}
+
+#IN-AN,
+#IN-AP,
+#IN-AR,
+#IN-AS,
+#IN-BR,
+#IN-CH,
+#IN-CT,
+#IN-DD,
+#IN-DL,
+#IN-DN,
+#IN-GA,
+#IN-GJ,
+#IN-HP,
+#IN-HR,
+#IN-JH,
+#IN-JK,
+#IN-KA,
+#IN-KL,
+#IN-LD,
+#IN-MH,
+#IN-ML,
+#IN-MN,
+#IN-MP,
+#IN-MZ,
+#IN-NL,
+#IN-OR,
+#IN-PB,
+#IN-PY,
+#IN-RJ,
+#IN-SK,
+#IN-TG,
+#IN-TN,
+#IN-TR,
+#IN-UP,
+#IN-UT,
+#IN-WB {
+}
