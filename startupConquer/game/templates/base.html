@@ -3,35 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Conquer India's market by providing relevant startup solutions"
-    />
+    <meta name="description" content="Conquer India's market by providing relevant startup solutions" />
     <meta name="keywords" content="risk, solutions, " />
     <title>{% block title %} Startup Conquer {% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/map.css' %}" />
     <link rel="icon" href="{% static 'img/svg/logo.svg' %}" type="image/gif" sizes="16x16"> 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="{% static 'js/home_script.js' %}"></script>
-    <script src="{% static 'js/map_script.js' %}"></script>
   </head>
   <body>
-    <nav class="bg-[#1C2127] p-2 flex px-4 flex-row gap-2 justify-between tracking-[13%] items-center">
+    <!-- Navbar Section  -->
+    <nav class="absolute z-40 top-0 sticky bg-[#1C2127]/[0.8] p-2 flex px-4 flex-row gap-2 justify-between tracking-[13%] items-center">
       <a href="/"><img src="{% static 'img/svg/logo.svg' %}" alt="Startup Conquer" /></a>
-      <a class="heading font-[Press Start 2P] cursor-pointer text-xl text-[#FCDA05] text-center w-[12rem]" href="/">STARTUP CONQUER</a>
-      <button class="nav-btn" onclick="showMenu()">
-        <svg width="36" height="26" viewBox="0 0 46 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M43.4483 4.36364H30C29.4513 4.36364 28.925 4.13377 28.537 3.7246C28.149 3.31543 27.931 2.76047 27.931 2.18182C27.931 1.60316 28.149 1.04821 28.537 0.63904C28.925 0.22987 29.4513 0 30 0H43.4483C43.997 0 44.5232 0.22987 44.9113 0.63904C45.2993 1.04821 45.5172 1.60316 45.5172 2.18182C45.5172 2.76047 45.2993 3.31543 44.9113 3.7246C44.5232 4.13377 43.997 4.36364 43.4483 4.36364Z" fill="#FCDA05" stroke="#FCDA05" stroke-width="0.00048"/>
-          <path d="M43.4483 21.8182H27.931L15.5172 4.36364H2.06897C1.52024 4.36364 0.993992 4.13377 0.605986 3.7246C0.21798 3.31543 0 2.76047 0 2.18182C0 1.60316 0.21798 1.04821 0.605986 0.63904C0.993992 0.22987 1.52024 0 2.06897 0H17.5862L30 17.4545H43.4483C43.997 17.4545 44.5233 17.6844 44.9113 18.0936C45.2993 18.5028 45.5172 19.0577 45.5172 19.6364C45.5172 20.215 45.2993 20.77 44.9113 21.1791C44.5233 21.5883 43.997 21.8182 43.4483 21.8182Z" fill="#FCDA05" stroke="#FCDA05" stroke-width="0.00048"/>
-          <path d="M2.06894 31.6364H15.5172C16.0659 31.6364 16.5922 31.8662 16.9802 32.2754C17.3682 32.6846 17.5862 33.2395 17.5862 33.8182C17.5862 34.3968 17.3682 34.9518 16.9802 35.361C16.5922 35.7701 16.0659 36 15.5172 36H2.06894C1.52022 36 0.993965 35.7701 0.605959 35.361C0.217953 34.9518 -2.47955e-05 34.3968 -2.47955e-05 33.8182C-2.47955e-05 33.2395 0.217953 32.6846 0.605959 32.2754C0.993965 31.8662 1.52022 31.6364 2.06894 31.6364Z" fill="#FCDA05" stroke="#FCDA05" stroke-width="0.00048"/>
-          <path d="M2.06893 14.1818H17.5862L30 31.6364H43.4482C43.997 31.6364 44.5232 31.8662 44.9112 32.2754C45.2992 32.6846 45.5172 33.2395 45.5172 33.8182C45.5172 34.3968 45.2992 34.9518 44.9112 35.361C44.5232 35.7701 43.997 36 43.4482 36H27.931L15.5172 18.5455H2.06893C1.52021 18.5455 0.993958 18.3156 0.605953 17.9064C0.217945 17.4972 -3.43323e-05 16.9423 -3.43323e-05 16.3636C-3.43323e-05 15.785 0.217945 15.23 0.605953 14.8209C0.993958 14.4117 1.52021 14.1818 2.06893 14.1818Z" fill="#FCDA05" stroke="#FCDA05" stroke-width="0.00048"/>
-          </svg>          
+      <a class="heading cursor-pointer text-xl text-[#FCDA05] text-center w-[12rem]" href="/">STARTUP CONQUER</a>
+      <button onclick="showMenu()" id="nav-btn" class="transition-all duration-300">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#FCDA05"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 12C9 12.5523 8.55228 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11C8.55228 11 9 11.4477 9 12Z" fill="#FCDA05"></path> <path d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z" fill="#FCDA05"></path> <path d="M17 12C17 12.5523 16.5523 13 16 13C15.4477 13 15 12.5523 15 12C15 11.4477 15.4477 11 16 11C16.5523 11 17 11.4477 17 12Z" fill="#FCDA05"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#FCDA05" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>        
       </button>
     </nav>
-    <div class="bg-[url('{% static 'img/img/stars-bg.png' %}')] bg-[#222831] bg-cover bg-center bg-no-repeat h-[90lvh] w-screen flex flex-col items-center justify-center">
+
+    <!-- Menu Section with transition -->
+    <div class="menu h-[90vh] bg-black/75 flex absolute z-20 flex-col gap-8 justify-center items-center text-white transition transition-[width] ease-in-out duration-300" id="menu-item">
+      <div class="heading cursor-pointer text-4xl text-[#FCDA05] tracking-[13%] text-center">MENU</div>
+      <a href="/about" class="text-2xl font-[Mohave] hover:text-[#FCDA05] transition-all duration-300">ABOUT</a>
+      <a href="/login" class="text-2xl font-[Mohave] hover:text-[#FCDA05] transition-all duration-300">LOGIN/REGISTER</a>
+      <a href="/leaderboard" class="text-2xl font-[Mohave] hover:text-[#FCDA05] transition-all duration-300">LEADERBOARD</a>
+    </div>
+
+    <div class="bg-[url('{% static 'img/img/stars-bg.png' %}')] bg-[#222831] bg-cover bg-center bg-no-repeat h-full flex flex-col items-center justify-center">
       {% block content %} {% endblock %}
     </div>
     <div id="tooltip" class="tooltip mt-4" style="display: none"></div>
+    <script src="{% static 'js/home_script.js' %}"></script>
+    <script src="{% static 'js/map_script.js' %}"></script>
+
   </body>
+  <footer>
+    <div >
+      <img class="select-none wave w-[4000px] mt-4 absolute opacity-75 max-w-[8000px] max-h-[320px]" src="{% static 'img/img/footer_back.png' %}" alt="">
+      <img class="select-none wave2 w-[4000px] absolute max-w-[8000px] max-h-[360px]" src="{% static 'img/img/footer_front.png' %}" alt="">
+      <div class="flex flex-col items-center text-[#1C2127] relative">
+        <div class="heading z-20 text-2xl absolute top-[14rem]">STARTUP CONQUER</div>
+        <div class="flex flex-row gap-2 font-[Mohave] text-xl absolute top-[18rem]">
+          <img src="{% static 'img/svg/mail.svg' %}" alt="">
+          <div>conquerstartup@gmail.com</div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>

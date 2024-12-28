@@ -6,8 +6,13 @@
   --variable4: #ff0000; /* Replace with your desired color */
 }
 
+*::selection {
+  background-color: #fcda05;
+  color: black;
+}
 body {
   background-color: #222831;
+  overflow-x: hidden;
 }
 
 .heading {
@@ -83,4 +88,43 @@ path:hover + .tooltip {
 #IN-UP,
 #IN-UT,
 #IN-WB {
+}
+
+#menu-item {
+  width: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: width 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+
+#menu-item.open {
+  width: 100vw;
+  visibility: visible;
+  opacity: 1;
+  transition: width 0.3s ease-in-out, visibility 0s 0s, opacity 0.3s ease-in-out;
+}
+
+.wave {
+  background-repeat: repeat-x;
+  position: absolute;
+  transform: translate(0, 0, 0);
+  animation: wave 8s ease-in-out infinite;
+}
+
+.wave2 {
+  animation: wave 5s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: -1600px;
+  }
+  100% {
+    margin-left: 0px;
+  }
 }

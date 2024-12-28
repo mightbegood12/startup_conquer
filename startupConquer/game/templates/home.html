@@ -1,28 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="h-screen w-screen flex flex-row items-center font-[Mohave] text-white text-2xl gap-[4rem] justify-center">
+<!-- Hero Section -->
+<div class="h-[90vh] flex flex-row items-center font-[Mohave] text-white text-2xl gap-[4rem] justify-center">
     <div class="flex flex-row gap-8">
         {% load static %}
-        <div class="w-48 shadow-2xl shadow-yellow-500/25 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
-            <img class="-skew-y-12 scale-y-[1.07] hover:scale-125 transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_hero_3.jpeg' %}" alt="Startup Conquer" />
+        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
+            <img class="-skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_001.jpg' %}" alt="Startup Conquer" />
         </div>
-        <div class="w-48 shadow-2xl shadow-yellow-500/25 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
-            <img class="skew-y-12 scale-y-[1.07] hover:scale-125 transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_hero_2.jpeg' %}" alt="Startup Conquer" />
+        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
+            <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_002.jpg' %}" alt="Startup Conquer" />
         </div>
-        <div class="w-48 shadow-2xl shadow-yellow-500/25 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
-            <img class="-skew-y-12 scale-y-[1.07] hover:scale-125 transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_hero.jpeg' %}" alt="Startup Conquer" />
+        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
+            <img class="-skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_003.jpg' %}" alt="Startup Conquer" />
         </div>
-        <div class="w-48 shadow-2xl shadow-yellow-500/25 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
-            <img class="skew-y-12 scale-y-[1.07] hover:scale-125 transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_hero_4.jpeg' %}" alt="Startup Conquer" />
+        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
+            <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_004.jpg' %}" alt="Startup Conquer" />
         </div>
-        <div class="w-48 shadow-2xl shadow-yellow-500/25 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
-            <img class="skew-y-12 scale-y-[1.07] hover:scale-125 transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_hero_5.jpeg' %}" alt="Startup Conquer" />
-        </div>
+        <!-- <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-yellow-500/25 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
+            <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_005.jpg' %}" alt="Startup Conquer" />
+        </div> -->
     </div>
     <div class="flex flex-col gap-4 w-56 text-center font-semibold justify-center leading-relaxed items-center"> 
         <div class="text-3xl">READY TO <span class="text-[#FCDA05]">SOLVE</span> REAL WORLD PROBLEMS?</div>
-        <button class="px-8 py-[4px] w-max bg-[#FCDA05] text-black rounded-full">SOLVE</button>
+        <a href="/game" class="px-8 py-[4px] w-max text-black rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">SOLVE</a>
     </div>
+</div>
+<div class="h-screen w-screen flex flex-row items-center font-[Mohave] text-white text-2xl gap-[4rem] justify-center">
+    
 </div>
 {% endblock %}

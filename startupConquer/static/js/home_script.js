@@ -1,6 +1,16 @@
-const navbtn = document.querySelectorAll(".nav-btn");
-navbtn.addEventListener("click", function () {
-  console.log("clicked");
-});
+const menu_item = document.getElementById("menu-item");
+function showMenu() {
+  menu_item.classList.toggle("open");
+  var div = document.getElementById("nav-btn"),
+    deg = rotated ? 0 : 90;
 
-function showMenu() {}
+  div.style.webkitTransform = "rotate(" + deg + "deg)";
+  div.style.mozTransform = "rotate(" + deg + "deg)";
+  div.style.msTransform = "rotate(" + deg + "deg)";
+  div.style.oTransform = "rotate(" + deg + "deg)";
+  div.style.transform = "rotate(" + deg + "deg)";
+
+  rotated = !rotated;
+}
+
+var rotated = false;
