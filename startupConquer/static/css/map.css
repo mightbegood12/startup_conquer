@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&display=swap");
 
 :root {
-  --variable4: #ff0000; /* Replace with your desired color */
+  --variable4: #fcda05;
 }
 
 *::selection {
@@ -20,12 +20,12 @@ body {
 }
 
 .land {
-  fill: #cccccc; /* Default grey color */
+  fill: #343434; /* Default grey color */
   fill-opacity: 1;
   stroke: black; /* Black border */
   stroke-opacity: 1;
   stroke-width: 0.5;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Small box-shadow */
+  box-shadow: 31px 31px 35px rgba(220, 80, 130, 1); /* Small box-shadow */
   transition: fill 0.3s, box-shadow 0.3s; /* Smooth transition for color and box-shadow */
 }
 
