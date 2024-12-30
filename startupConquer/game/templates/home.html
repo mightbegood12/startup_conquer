@@ -23,7 +23,11 @@
     </div>
     <div class="flex flex-col gap-4 w-56 text-center font-semibold justify-center leading-relaxed items-center"> 
         <div class="text-3xl">READY TO <span class="text-[#FCDA05]">SOLVE</span> REAL WORLD PROBLEMS?</div>
-        <a href="/game" class="px-8 py-[4px] w-max text-black rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">SOLVE</a>
+        {% comment %} <a href="/game" class="px-8 py-[4px] w-max text-black rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">SOLVE</a> {% endcomment %}
+        <a href="/game"  class="group relative text-2xl px-8 py-2 w-max text-center cursor-pointer overflow-hidden rounded-full border border-[#FCDA05] font-[Mohave] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">
+            <span class="ease absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-[#FCDA05] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
+            <span class="ease relative text-white transition duration-300 group-hover:text-black uppercase">solve</span>
+        </a>
     </div>
 </div>
 <div class="h-auto w-screen flex flex-col items-center font-[Mohave] text-white text-2xl mt-8">

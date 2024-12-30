@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="flex flex-row mt-10 items-center justify-center " >
+    <h1 class="font-bold text-5xl font-[Mohave] p-2  text-white">SIGNUP</h1>
+    <img src={% static 'img/svg/titleDesign.svg' %} alt="titleDesign" class="w-12 pb-2 h-12">
+</div>  
+<div class="h-[60vh] w-[70%] rounded-tr-[10rem] rounded-bl-[10rem]   text-3xl flex bg-[#1C2127] flex-col mt-8  p-8 items-center justify-center">
+    
+    <div class="flex flex-col items-center justify-center  gap-8"> 
+
+        <div class="flex justify-center items-center gap-3">
+            <img src={% static 'img/svg/user.svg' %} alt="titleDesign" class="w-7  h-7" />
+            <input type="email"   class="bg-[#404C5D]  text-white h-10 text-xl p-4 rounded-full  opacity-80 border  outline-none" name="username" placeholder="Username" />
+        </div>
+
+
+    <div class="flex justify-center items-center gap-3">
+        <img src={% static 'img/svg/loginMail.svg' %} alt="titleDesign" class="w-7  h-7" />
+        <input type="email"   class="bg-[#404C5D]  text-white text-xl  h-10 p-4 rounded-full  opacity-80 border  outline-none" name="email" placeholder="Email" />
+    </div>
+
+    <div class="flex justify-center items-center gap-3">
+        <img src={% static 'img/svg/passowrd.svg' %} alt="titleDesign" class="w-7  h-7" />
+        <input type="email"   class="bg-[#404C5D]  text-white h-10 text-xl p-4 rounded-full  opacity-80 border  outline-none" name="password" placeholder="Password" />
+    </div>
+
+
+        {% comment %} <button class="uppercase text-xl h-10 w-20 text-center p-2 hover:shadow-inner font-[Mohave]  rounded-full text-black bg-[#FCDA05] ">login</button> {% endcomment %}
+        <button class="group relative text-2xl h-12 w-32 text-center p-2 cursor-pointer overflow-hidden rounded-full border border-[#FCDA05] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-[Mohave]">
+            <span class="ease absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-[#FCDA05] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
+            <span class="ease relative text-white transition duration-300 group-hover:text-black uppercase">register</span>
+        </button>
+
+</div>
+    
+  
+
+</div>
+
+{% endblock %}
+
