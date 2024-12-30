@@ -26,7 +26,72 @@
         <a href="/game" class="px-8 py-[4px] w-max text-black rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">SOLVE</a>
     </div>
 </div>
-<div class="h-screen w-screen flex flex-row items-center font-[Mohave] text-white text-2xl gap-[4rem] justify-center">
+<div class="h-auto w-screen flex flex-col items-center font-[Mohave] text-white text-2xl mt-8">
+    <div class="flex flex-row gap-2">
+        <h1 class="font-bold text-[#FCDA05] heading">GAME OVERVIEW</h1>
+        <img src="{% static 'img/svg/titleDesign.svg' %}" alt="titleDesign" class="w-12 h-12 pb-[20px]">
+    </div>
+    <div class="w-[70%] text-3xl flex flex-grow bg-[#1C2127]/[0.75] flex-col rounded-tr-[10rem] rounded-bl-[10rem] gap-2 mt-8 p-8 items-center justify-center">
+        <h1 class="w-[100%] text-center font-bold text-white heading mb-8">How to <span class="text-[#FCDA05]">Play</span></h1>
+        <!-- Dropdown -->
+        <div class="font-[Mohave] flex flex-col items-center w-[100%]">
+            <!-- First dropdown -->
+            <button class="flex flex-row items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-1', 'dd-img-1')">
+                <div class="w-[80%]">Choose your Level</div>
+                <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-1">
+            </button>
+            <div id="dd-content-1" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+                Start your journey in one of four difficulty levels:
+                <ul>
+                    <li>Easy: Southern states (Tamil Nadu, Kerala, Karnataka, Andhra Pradesh)</li>
+                    <li>Medium: Western states (Maharashtra, Gujarat, Rajasthan)</li>
+                    <li>Hard: Eastern states (Odisha, Bihar, West Bengal)</li>
+                    <li>Very Hard: Northern states (UP, Punjab, Himachal Pradesh)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="font-[Mohave] flex flex-col items-center w-[100%]">
+            <button class="flex flex-row items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-2', 'dd-img-2')">
+                <div class="w-[80%]">Spin the Wheel</div>
+                <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-2">
+            </button>
+            <div id="dd-content-2" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+                Each turn, spin the wheel to get a sector (e.g., Technology, Healthcare, Education). Your solution must match the sector assigned.
+            </div>
+        </div>
+        <div class="font-[Mohave] flex flex-col items-center w-[100%]">
+            <button class="flex flex-row items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-3', 'dd-img-3')">
+                <div class="w-[80%]">Address State-Specific Challenges</div>
+                <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-3">
+            </button>
+            <div id="dd-content-3" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+                Each state presents a real-world issue unique to its people. Propose a creative startup idea that aligns with the sector to solve the problem. Your solution will be judged based on:
+                <ul>
+                    <li>Sector Relevance: Does your idea match the chosen sector?</li>
+                    <li>Problem Solving: How well does it tackle the issue?</li>
+                    <li>Creativity and Feasibility: Is the idea innovative and practical?</li>
+                </ul>
+            </div>
+        </div>
+        <div class="font-[Mohave] flex flex-col items-center w-[100%]">
+            <button class="flex flex-row items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-4', 'dd-img-4')">
+                <div class="w-[80%]">Conquer States</div>
+                <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-4">
+            </button>
+            <div id="dd-content-4" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4 ">
+                Approved solutions claim the state for your team, marking it with your color on the map. Progress to the next state to continue expanding your domain.
+            </div>
+        </div>
+        <div class="font-[Mohave] flex flex-col items-center w-[100%]">
+            <button class="flex flex-row items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-5', 'dd-img-5')">
+                <div class="w-[80%]">Climb the Leaderboard</div>
+                <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-5">
+            </button>
+            <div id="dd-content-5" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+                Earn points for each successful solution and aim for a top rank. Speed and innovation can give you the edge needed to dominate the leaderboard!
+            </div>
+        </div>
+    </div>
     
 </div>
 {% endblock %}
