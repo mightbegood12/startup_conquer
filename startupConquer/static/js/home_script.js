@@ -28,9 +28,7 @@ function showDropdown(event, contentId, imgId) {
     dd_content.style.height = "fit-content"; // You can set a specific height if you prefer
     dd_content.style.opacity = "1";
   }
-  // dd_content.classList.toggle("open");
   var deg = rotated ? 0 : 180;
   dd_img.style.transform = "rotate(" + deg + "deg)";
-
   rotated = !rotated;
 }
