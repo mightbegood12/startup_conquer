@@ -15,3 +15,6 @@ def login(request):
 
 def signup(request):
     return render(request, 'signup.html')
+
+def leaderboard(request):
+    return render(request, 'leaderboard.html')
