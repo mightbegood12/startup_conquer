@@ -11,7 +11,7 @@
     <link rel="icon" href="{% static 'img/svg/logo.svg' %}" type="image/gif" sizes="16x16"> 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-[url('{% static 'img/img/stars-bg.png' %}')] bg-cover bg-center bg-no-repeat bg-[#222831] ">
+  <body class="min-h-screen bg-[url('{% static 'img/img/stars-bg.png' %}')] bg-cover bg-center bg-no-repeat bg-[#222831] ">
     <!-- Navbar Section  -->
     <nav class="absolute z-40 top-0 sticky bg-[#1C2127]/[0.8] p-2 flex px-4 flex-row gap-2 justify-between tracking-[13%] items-center">
       <a href="/"><img src="{% static 'img/svg/logo.svg' %}" alt="Startup Conquer" /></a>
@@ -25,7 +25,7 @@
       {% block content %} {% endblock %}
     </div>
     <!-- Menu Section with transition -->
-    <div class="menu h-screen bg-black/75 flex sticky h-screen top-0 right-0 bottom-0 overflow-hidden z-20 flex-col gap-8 justify-center items-center text-white transition-[width] ease-in-out duration-300" id="menu-item">
+    <div class="menu h-0 bg-black/75 flex sticky top-0 right-0 bottom-0 overflow-hidden z-20 flex-col gap-8 justify-center items-center text-white transition-[width] ease-in-out duration-300" id="menu-item">
       <div class="heading cursor-pointer text-4xl text-[#FCDA05] tracking-[13%] text-center">MENU</div>
       <a href="/about" class="text-2xl font-[Mohave] hover:text-[#FCDA05] transition-all duration-300">ABOUT</a>
       <a href="/login" class="text-2xl font-[Mohave] hover:text-[#FCDA05] transition-all duration-300">LOGIN</a>

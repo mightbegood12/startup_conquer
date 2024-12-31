@@ -92,6 +92,7 @@ path:hover + .tooltip {
 
 #menu-item {
   width: 0;
+  height: 0;
   visibility: hidden;
   opacity: 0;
   transition: width 0.3s ease-in-out, visibility 0s 0.3s,
@@ -100,6 +101,7 @@ path:hover + .tooltip {
 
 #menu-item.open {
   width: 100vw;
+  height: 100vh;
   visibility: visible;
   opacity: 1;
   transition: width 0.3s ease-in-out, visibility 0s 0s, opacity 0.3s ease-in-out;
@@ -127,4 +129,14 @@ path:hover + .tooltip {
   100% {
     margin-left: 0px;
   }
+}
+
+#dd-content-1,
+#dd-content-2,
+#dd-content-3,
+#dd-content-4,
+#dd-content-5 {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
 }
