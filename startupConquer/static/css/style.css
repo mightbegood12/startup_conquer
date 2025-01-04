@@ -10,6 +10,23 @@
   background-color: #fcda05;
   color: black;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fcda05;
+  border-radius: 10px;
+}
+
 body {
   background-color: #222831;
   overflow-x: hidden;
@@ -101,7 +118,8 @@ path:hover + .tooltip {
 
 #menu-item.open {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
+  margin-top: 10vh;
   visibility: visible;
   opacity: 1;
   transition: width 0.3s ease-in-out, visibility 0s 0s, opacity 0.3s ease-in-out;
@@ -139,4 +157,72 @@ path:hover + .tooltip {
   visibility: hidden;
   opacity: 0;
   height: 0;
+}
+
+#leaderboard.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+#login.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+#about.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+#register.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+
+#moveBlck {
+  animation: moveInfinite 4s ease-in-out infinite;
+}
+
+@keyframes moveInfinite {
+  0% {
+    width: 10rem;
+    margin-left: 300px;
+  }
+  25% {
+    width: 16rem;
+  }
+  50% {
+    width: 10rem;
+    margin-left: -300px;
+  }
+  75% {
+    width: 16rem;
+  }
+  100% {
+    width: 10rem;
+    margin-left: 300px;
+  }
+}
+
+#toggle-eye {
+  width: 0px;
+  height: 2px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle-eye.shown {
+  width: 22px;
+  height: 2px;
+  opacity: 1;
+  visibility: visible;
 }

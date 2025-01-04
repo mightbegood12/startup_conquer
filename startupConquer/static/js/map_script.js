@@ -1,5 +1,6 @@
 const paths = document.querySelectorAll(".land");
 const tooltip = document.getElementById("tooltip");
+const questionWrapper = document.getElementById("question-wrapper");
 paths.forEach((path) => {
   path.addEventListener("mouseenter", function (event) {
     const title = event.target.getAttribute("title");
@@ -15,5 +16,8 @@ paths.forEach((path) => {
   });
   path.addEventListener("mouseleave", function () {
     tooltip.style.display = "none";
+  });
+  path.addEventListener("click", function () {
+    questionWrapper.classList.toggle("hidden");
   });
 });
