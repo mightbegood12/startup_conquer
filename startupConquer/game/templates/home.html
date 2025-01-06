@@ -24,7 +24,7 @@
     <div class="flex flex-col gap-4 w-56 text-center font-semibold justify-center leading-relaxed items-center"> 
         <div class="text-2xl md:text-3xl">READY TO <span class="text-[#FCDA05]">SOLVE</span> REAL WORLD PROBLEMS?</div>
         {% comment %} <a href="/game" class="px-8 py-[4px] w-max text-black rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">SOLVE</a> {% endcomment %}
-        <a href="/game"  class="group relative text-2xl px-8 py-2 w-max text-center cursor-pointer overflow-hidden rounded-full border border-[#FCDA05] font-[Mohave] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">
+        <a href="/game"  class="group relative text-2xl px-8 py-2 w-max text-center cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] overflow-hidden rounded-full border border-[#FCDA05] font-[Mohave] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">
             <span class="ease-in-out absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-[#FCDA05] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
             <span class="ease relative text-white transition duration-300 group-hover:text-black uppercase">solve</span>
         </a>
@@ -42,7 +42,7 @@
        
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
             <!-- First dropdown -->
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-1', 'dd-img-1')">
+            <button class="flex cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-1', 'dd-img-1')">
                 <div class="w-[80%] p-4">Choose your Level</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-1">
             </button>
@@ -57,7 +57,7 @@
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-2', 'dd-img-2')">
+            <button class="flex cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-2', 'dd-img-2')">
                 <div class="w-[80%] p-4">Spin the Wheel</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-2">
             </button>
@@ -66,7 +66,7 @@
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-3', 'dd-img-3')">
+            <button class="flex cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-3', 'dd-img-3')">
                 <div class="w-[80%] p-4">Address State-Specific Challenges</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-3">
             </button>
@@ -80,7 +80,7 @@
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-4', 'dd-img-4')">
+            <button class="flex cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-4', 'dd-img-4')">
                 <div class="w-[80%] p-4">Conquer States</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-4">
             </button>
@@ -89,7 +89,7 @@
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-5', 'dd-img-5')">
+            <button class="flex cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-5', 'dd-img-5')">
                 <div class="w-[80%] p-4">Climb the Leaderboard</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-5">
             </button>
