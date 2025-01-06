@@ -2,27 +2,27 @@
 
 {% block content %}
 <!-- Hero Section -->
-<div class="h-[90vh] flex flex-row items-center font-[Mohave] text-white text-2xl gap-[4rem] justify-center">
-    <div class="flex flex-row gap-8">
+<div class="mt-12 md:mt-0 h-full md:h-[90vh] flex flex-col md:flex-row items-center font-[Mohave] text-white text-lg md:text-2xl gap-4 md:gap-[4rem] justify-center">
+    <div class="flex flex-row gap-2 md:gap-8">
         {% load static %}
-        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
-            <img class="-skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_001.jpg' %}" alt="Startup Conquer" />
+        <div class="h-48 md:h-auto w-16 md:w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] md:hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
+            <img class="-skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-full md:h-[30rem] object-center object-cover" src="{% static 'img/img/map_001.jpg' %}" alt="Startup Conquer" />
         </div>
-        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
-            <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_002.jpg' %}" alt="Startup Conquer" />
+        <div class="h-48 md:h-auto w-16 md:w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] md:hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
+            <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-full md:h-[30rem] object-center object-cover" src="{% static 'img/img/map_002.jpg' %}" alt="Startup Conquer" />
         </div>
-        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
-            <img class="-skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_003.jpg' %}" alt="Startup Conquer" />
+        <div class="h-48 md:h-auto w-16 md:w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] md:hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden skew-y-12 overflow-hidden rounded-lg">
+            <img class="-skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-full md:h-[30rem] object-center object-cover" src="{% static 'img/img/map_003.jpg' %}" alt="Startup Conquer" />
         </div>
-        <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
-            <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_004.jpg' %}" alt="Startup Conquer" />
+        <div class="h-48 md:h-auto w-16 md:w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] md:hover:w-52 transiton-all duration-300 shadow-black/75 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
+            <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-full md:h-[30rem] object-center object-cover" src="{% static 'img/img/map_004.jpg' %}" alt="Startup Conquer" />
         </div>
         <!-- <div class="w-48 shadow-[-20px_35px_60px_-15px_rgba(0,0,0,8)] hover:w-52 transiton-all duration-300 shadow-yellow-500/25 relative backface-hidden -skew-y-12 overflow-hidden rounded-lg">
             <img class="skew-y-12 scale-y-[1.08] hover:scale-[120%] transition-all duration-300 relative w-full h-[30rem] object-center object-cover" src="{% static 'img/img/map_005.jpg' %}" alt="Startup Conquer" />
         </div> -->
     </div>
     <div class="flex flex-col gap-4 w-56 text-center font-semibold justify-center leading-relaxed items-center"> 
-        <div class="text-3xl">READY TO <span class="text-[#FCDA05]">SOLVE</span> REAL WORLD PROBLEMS?</div>
+        <div class="text-2xl md:text-3xl">READY TO <span class="text-[#FCDA05]">SOLVE</span> REAL WORLD PROBLEMS?</div>
         {% comment %} <a href="/game" class="px-8 py-[4px] w-max text-black rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">SOLVE</a> {% endcomment %}
         <a href="/game"  class="group relative text-2xl px-8 py-2 w-max text-center cursor-pointer overflow-hidden rounded-full border border-[#FCDA05] font-[Mohave] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">
             <span class="ease-in-out absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-[#FCDA05] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
@@ -31,22 +31,22 @@
     </div>
 </div>
 <!-- Game Overview Section -->
-<div class="h-auto w-screen flex flex-col items-center font-[Mohave] text-white text-2xl my-8">
+<div class="h-auto w-screen flex flex-col items-center font-[Mohave] text-white my-8">
     <div class="flex flex-row gap-2">
-        <h1 class="font-bold text-[#FCDA05] heading">GAME OVERVIEW</h1>
+        <h1 class="font-bold text-[#FCDA05] heading text-xl md:text-3xl">GAME OVERVIEW</h1>
         <img src="{% static 'img/svg/titleDesign.svg' %}" alt="titleDesign" class="w-12 h-12 pb-[20px]">
     </div> 
     <!-- Dropdown -->
-    <div class="w-[70%] relative text-3xl flex flex-grow bg-[#1C2127]/[0.75] flex-col rounded-tr-[10rem] rounded-bl-[10rem] gap-2 mt-8 p-8 items-center justify-center">
-        <h1 class="w-[100%] text-center font-bold text-white heading mb-8">How to <span class="text-[#FCDA05]">Play</span></h1>
+    <div class="w-[70%] relative text-xl md:text-3xl flex flex-grow bg-[#1C2127]/[0.75] flex-col rounded-lg md:rounded-tr-[10rem] md:rounded-bl-[10rem] gap-2 md:mt-8 p-8 items-center justify-center">
+        <div class="w-[100%] text-center font-bold text-white heading md:mb-8">How to <span class="text-[#FCDA05]">Play</span></div>
        
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
             <!-- First dropdown -->
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-1', 'dd-img-1')">
+            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-1', 'dd-img-1')">
                 <div class="w-[80%] p-4">Choose your Level</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-1">
             </button>
-            <div id="dd-content-1" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+            <div id="dd-content-1" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2]">
                 Start your journey in one of four difficulty levels:
                 <ul>
                     <li>Easy: Southern states (Tamil Nadu, Kerala, Karnataka, Andhra Pradesh)</li>
@@ -57,20 +57,20 @@
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-2', 'dd-img-2')">
+            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-2', 'dd-img-2')">
                 <div class="w-[80%] p-4">Spin the Wheel</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-2">
             </button>
-            <div id="dd-content-2" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+            <div id="dd-content-2" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2]">
                 Each turn, spin the wheel to get a sector (e.g., Technology, Healthcare, Education). Your solution must match the sector assigned.
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-3', 'dd-img-3')">
+            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-3', 'dd-img-3')">
                 <div class="w-[80%] p-4">Address State-Specific Challenges</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-3">
             </button>
-            <div id="dd-content-3" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+            <div id="dd-content-3" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2]">
                 Each state presents a real-world issue unique to its people. Propose a creative startup idea that aligns with the sector to solve the problem. Your solution will be judged based on:
                 <ul>
                     <li>Sector Relevance: Does your idea match the chosen sector?</li>
@@ -80,20 +80,20 @@
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-4', 'dd-img-4')">
+            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-4', 'dd-img-4')">
                 <div class="w-[80%] p-4">Conquer States</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-4">
             </button>
-            <div id="dd-content-4" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4 ">
+            <div id="dd-content-4" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2]">
                 Approved solutions claim the state for your team, marking it with your color on the map. Progress to the next state to continue expanding your domain.
             </div>
          </div>
         <div class="font-[Mohave] flex flex-col items-center w-[100%]">
-            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full" onclick="showDropdown(event, 'dd-content-5', 'dd-img-5')">
+            <button class="flex flex-row focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-lg items-center justify-around w-full p-2" onclick="showDropdown(event, 'dd-content-5', 'dd-img-5')">
                 <div class="w-[80%] p-4">Climb the Leaderboard</div>
                 <img src="{% static 'img/svg/dropdown.svg' %}" alt="" class="transition-all duration-300 ease-in-out" id="dd-img-5">
             </button>
-            <div id="dd-content-5" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2] p-4">
+            <div id="dd-content-5" class="w-[80%] text-lg text-center transition-all duration-300 ease-in-out rounded-xl bg-[#ad9605]/[0.2]">
                 Earn points for each successful solution and aim for a top rank. Speed and innovation can give you the edge needed to dominate the leaderboard!
             </div>
         </div>
@@ -102,19 +102,18 @@
             <span class="w-[36rem] h-10 bg-gradient-to-r from-[#fcda05] to-[#c29400] rounded-full"></span>
         </div>
     </div>
-    
 </div>
 <!-- Why play this game -->
-<div class="h-[80vh] w-screen flex flex-col items-center font-[Mohave] text-white text-2xl my-8">
-    <div class="flex flex-row gap-2">
-        <h1 class="font-bold text-[#FCDA05] heading">WHY PLAY THIS GAME?</h1>
-        <img src="{% static 'img/svg/titleDesign.svg' %}" alt="titleDesign" class="w-12 h-12 pb-[20px]">
+<div class="h-auto md:h-[80vh] w-screen flex flex-col items-center font-[Mohave] text-white my-8">
+    <div class="flex flex-row md:gap-2">
+        <div class="font-bold text-[#FCDA05] w-[18rem] md:w-full text-xl heading text-center md:text-3xl">WHY PLAY THIS GAME?</div>
+        <img src="{% static 'img/svg/titleDesign.svg' %}" alt="titleDesign" class="w-12 h-12 md:pb-[20px]">
     </div> 
-    <div class="w-[70%] relative text-3xl flex flex-grow bg-[#1C2127]/[0.75] flex-col rounded-tr-[10rem] rounded-bl-[10rem] gap-2 mt-8 p-8 items-center justify-center">
+    <div class="w-[70%] relative text-xl md:text-3xl flex flex-grow bg-[#1C2127]/[0.75] flex-col rounded-lg md:rounded-tr-[10rem] md:rounded-bl-[10rem] gap-2 mt-8 p-8 items-center justify-center">
         <div class="flex flex-col gap-4 w-[80%]">
             <div>
                 <span class="text-[#fcda05]">Test Your Skills: </span>Sharpen your problem-solving abilities and creativity.
-            </div>
+            </div> 
         </div>
         <div class="flex flex-col gap-4 w-[80%]">
             <div>

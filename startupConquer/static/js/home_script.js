@@ -16,11 +16,13 @@ function showDropdown(event, contentId, imgId) {
     dd_content.style.visibility = "hidden";
     dd_content.style.height = "0";
     dd_content.style.opacity = "0";
+    dd_content.style.padding = "0";
     dd_img.style.transform = "rotate(" + 0 + "deg)";
   } else {
     dd_content.style.visibility = "visible";
     dd_content.style.height = "fit-content"; // You can set a specific height if you prefer
     dd_content.style.opacity = "1";
+    dd_content.style.padding = "20px";
     dd_img.style.transform = "rotate(" + 180 + "deg)";
   }
 }

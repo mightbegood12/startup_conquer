@@ -5,25 +5,26 @@ Leaderboard
 
 {% block content %}
 {% load static %}
-<div class="flex flex-row mt-10 items-center justify-center " >
-    <h1 class="font-bold text-5xl font-[Mohave] p-2  text-white uppercase">leaderboard</h1>
-    <img src="{% static 'img/svg/trophy.svg' %}" alt="titleDesign" class="w-12 pb-2 h-12">
-</div>  
-<div class="h-auto font-[Mohave] w-[70%] rounded-tr-[8rem] rounded-bl-[8rem] text-3xl flex bg-[#1C2127] flex-col mt-8 p-8 items-center justify-center">
-    <div class="bg-slate-900 w-[90%] h-auto p-2 ">
-        <div class="w-full flex flex-row justify-around items-center text-[#FCDA05]">
-        <h1>Place</h1>
-        <h1>Username</h1>
-        <h1>Points</h1>
+<div class="h-screen">
+    <div class="flex flex-row mt-10 items-center justify-center" >
+        <h1 class="font-bold text-4xl md:text-5xl font-[Mohave] p-2 text-white uppercase">leaderboard</h1>
+        <img src="{% static 'img/svg/trophy.svg' %}" alt="titleDesign" class="w-12 pb-2 h-12">
+    </div>  
+    <div class="h-[60dvh] w-[80vw] font-[Mohave] rounded-lg md:rounded-tr-[8rem] md:rounded-bl-[8rem] text-xl md:text-3xl flex bg-[#1C2127]/[0.75] flex-col mt-8 items-center justify-start p-4 md:p-8">
+        <div class="bg-slate-900 rounded-lg w-[90%] h-[100%] p-2 ">
+            <div class="w-full flex flex-row justify-around items-center text-[#FCDA05]">
+                <h1>Place</h1>
+                <h1>Username</h1>
+                <h1>Points</h1>
+            </div>
+            <div class="bg-slate-800 text-lg md:text-2xl text-white cursor-pointer rounded-lg m-2 p-3 flex justify-around">
+                <p class='flex justify-center gap-2 items-center'><img src="{% static 'img/svg/trophy.svg' %}" alt="titleDesign" class="w-5 text-slate-400 mb-1 h-5">1</p>
+                <p>Monkey D luffy</p>
+                <p>1000</p>
+            </div>
         </div>
-         <div class="bg-slate-800 hover:shadow-lg text-white cursor-pointer rounded-lg m-2 p-3 flex justify-around">
-            <p class='flex justify-center gap-2 items-center'><img src="{% static 'img/svg/trophy.svg' %}" alt="titleDesign" class="w-5 text-slate-400 mb-1 h-5">1</p>
-            <p>Monkey D luffy</p>
-            <p>1000</p>
-         </div>
     </div>
 </div>
-    
   
 
 </div>
