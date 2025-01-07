@@ -18,3 +18,7 @@ def signup(request):
 
 def leaderboard(request):
     return render(request, 'leaderboard.html')
+
+
+def spinthewheel(request):
+    return render(request, 'spinDwheel.html')

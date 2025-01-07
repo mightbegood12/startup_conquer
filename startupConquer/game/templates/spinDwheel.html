@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}
-Spint the wheel
+Spin the Wheel
 {% endblock %}
-
+{% load static %}
 {% block content %}
-
+<div id="spin_the_wheel">
+    <canvas id="wheel" width="600" height="600"></canvas>
+    <div id="spin">SPIN</div>
+  </div>
+{% endblock%}
+{% block script %}
+        <script src="{% static 'js/wheel.js' %}"></script>
 {% endblock %}
