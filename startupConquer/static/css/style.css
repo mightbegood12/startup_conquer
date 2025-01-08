@@ -50,6 +50,10 @@ body {
 .land:hover {
   fill: var(--variable4); /* Replace with your specific variable or color */
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+  transform: scale(1.008);
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+  box-shadow: 10px 5px 5px #fcda05;
 }
 
 /* Style for custom tooltip */
@@ -238,7 +242,7 @@ path:hover + .tooltip {
 }
 
 #spin {
- font-size: larger;
+  font-size: larger;
   user-select: none;
   cursor: pointer;
   display: flex;
@@ -253,9 +257,7 @@ path:hover + .tooltip {
   margin: -15%;
   /* background: #fff;
   color: #fff; */
-  box-shadow:
-    0 0 0 8px currentColor,
-    0 0px 15px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   transition: 0.8s;
 }

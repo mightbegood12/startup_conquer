@@ -1,8 +1,9 @@
 from django.shortcuts import render
+from .forms import ContactForm
 
 # Create your views here.
-def game(request):
-    return render(request, 'map.html')
+def indiaMap(request):
+    return render(request, 'indiaMap.html')
 
 def home(request):
     return render(request, 'home.html')
@@ -19,6 +20,12 @@ def signup(request):
 def leaderboard(request):
     return render(request, 'leaderboard.html')
 
+def levelSelection(request):
+    return render(request, 'levelSelection.html')
 
 def spinthewheel(request):
     return render(request, 'spinDwheel.html')
+
+def contact_view(request):
+    form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
