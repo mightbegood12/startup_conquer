@@ -1,9 +1,17 @@
 const paths = document.querySelectorAll(".land");
 const tooltip = document.getElementById("tooltip");
 const questionWrapper = document.getElementById("question-wrapper");
+const sectorSelectedElement = document.getElementById("sector-selected");
+const spinTheWheel = document.getElementById("spin-the-wheel-section");
+const sectorContinue = document.getElementById("sector-pass");
+const selectedSectorWrapper = document.querySelector("#sectorWrapper");
+const selectedSectorText = document.querySelector("#selected-sector");
+let stateConquered = JSON.parse(sessionStorage.getItem("stateConquered")) || [];
+let selectedSector;
 
 const keywords = ["hello", "map", "doodle"];
 
+//Map Logic
 paths.forEach((path) => {
   path.addEventListener("mouseenter", function (event) {
     const title = event.target.getAttribute("title");
@@ -20,28 +28,159 @@ paths.forEach((path) => {
   path.addEventListener("mouseleave", function () {
     tooltip.style.display = "none";
   });
-  path.addEventListener("click", function () {
-    sessionStorage.removeItem("selectedSector");
-    window.location.href = "http://127.0.0.1:8000/spinthewheel/";
+  path.addEventListener("click", function (e) {
+    if (!stateConquered.includes(e.target.getAttribute("title"))) {
+      stateConquered.push(e.target.getAttribute("title"));
+      sessionStorage.setItem("stateConquered", JSON.stringify(stateConquered));
+      console.log(stateConquered);
+      // window.location.href = "http://127.0.0.1:8000/spinthewheel/";
+      if (selectedSector) {
+        selectedSectorWrapper.classList.toggle("hidden"); //hides
+      }
+      spinTheWheel.classList.toggle("hidden");
+      init();
+    } else {
+      alert("Already Conquered!");
+    }
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded and parsed!");
   // You can safely manipulate DOM elements here
-  const element = document.getElementById("sector-selected");
-  element.textContent = sessionStorage.getItem("selectedSector");
-  if (sessionStorage.getItem("selectedSector")) {
-    questionWrapper.classList.toggle("hidden");
-  }
-
   document.getElementById("conquer-btn").addEventListener("click", function () {
     const userInput = document.getElementById("user-input");
     const userSubmitValue = userInput.value;
     if (keywords.includes(userSubmitValue)) {
       questionWrapper.classList.toggle("hidden");
-      console.log(userInput, userSubmitValue);
+    } else {
+      alert("Not a valid answer");
     }
-    console.log("Conquer button clicked", userSubmitValue);
   });
+  sectorContinue.addEventListener("click", function () {
+    spinTheWheel.classList.toggle("hidden"); //hides
+    questionWrapper.classList.toggle("hidden"); //unhides
+    sectorSelectedElement.textContent = selectedSector;
+  });
+});
+
+// SPIN THE WHEEL
+const sectors = [
+  { color: "#1C2127", text: "#fcda05", label: "Technology and Innovation" },
+  { color: "#fcda05", text: "#1C2127", label: "Healthcare and Wellness" },
+  {
+    color: "#1C2127",
+    text: "#fcda05",
+    label: "Education and Skill Development",
+  },
+  {
+    color: "#fcda05",
+    text: "#1C2127",
+    label: "Agriculture and Sustainability",
+  },
+  { color: "#1C2127", text: "#fcda05", label: "Retail and E-commerce" },
+  { color: "#fcda05", text: "#1C2127", label: "Infrastructure and Transport" },
+];
+
+const events = {
+  listeners: {},
+  addListener: function (eventName, fn) {
+    this.listeners[eventName] = this.listeners[eventName] || [];
+    this.listeners[eventName].push(fn);
+  },
+  fire: function (eventName, ...args) {
+    if (this.listeners[eventName]) {
+      for (let fn of this.listeners[eventName]) {
+        fn(...args);
+      }
+    }
+  },
+};
+
+const rand = (m, M) => Math.random() * (M - m) + m;
+const tot = sectors.length;
+const spinEl = document.querySelector("#spin");
+const ctx = document.querySelector("#wheel").getContext("2d");
+const dia = ctx.canvas.width;
+const rad = dia / 2;
+const PI = Math.PI;
+const TAU = 2 * PI;
+const arc = TAU / sectors.length;
+
+const friction = 0.98; // 0.995=soft, 0.99=mid, 0.98=hard
+let angVel = 0; // Angular velocity
+let ang = 0; // Angle in radians
+
+let spinButtonClicked = false;
+
+const getIndex = () => Math.floor(tot - (ang / TAU) * tot) % tot;
+
+function drawSector(sector, i) {
+  const ang = arc * i;
+  ctx.save();
+
+  // COLOR
+  ctx.beginPath();
+  ctx.fillStyle = sector.color;
+  ctx.moveTo(rad, rad);
+  ctx.arc(rad, rad, rad, ang, ang + arc);
+  ctx.lineTo(rad, rad);
+  ctx.fill();
+
+  // TEXT
+  ctx.translate(rad, rad);
+  ctx.rotate(ang + arc / 2);
+  ctx.textAlign = "right";
+  ctx.fillStyle = sector.text;
+  ctx.font = " 1rem 'Mohave', sans-serif";
+  ctx.fillText(sector.label, rad - 10, 10, 180);
+  //
+
+  ctx.restore();
+}
+
+function rotate() {
+  const sector = sectors[getIndex()];
+  ctx.canvas.style.transform = `rotate(${ang - PI / 2}rad)`;
+
+  spinEl.textContent = !angVel ? "SPIN" : sector.label;
+  spinEl.style.background = sector.color;
+  spinEl.style.color = sector.text;
+}
+
+function frame() {
+  // Fire an event after the wheel has stopped spinning
+  if (!angVel && spinButtonClicked) {
+    const finalSector = sectors[getIndex()];
+    events.fire("spinEnd", finalSector);
+    spinButtonClicked = false; // reset the flag
+    return;
+  }
+
+  angVel *= friction; // Decrement velocity by friction
+  if (angVel < 0.002) angVel = 0; // Bring to stop
+  ang += angVel; // Update angle
+  ang %= TAU; // Normalize angle
+  rotate();
+}
+
+function engine() {
+  frame();
+  requestAnimationFrame(engine);
+}
+
+function init() {
+  sectors.forEach(drawSector);
+  rotate(); // Initial rotation
+  engine(); // Start engine
+  spinEl.addEventListener("click", () => {
+    if (!angVel) angVel = rand(0.25, 0.45);
+    spinButtonClicked = true;
+  });
+}
+
+events.addListener("spinEnd", (sector) => {
+  selectedSectorWrapper.classList.toggle("hidden");
+  selectedSectorText.textContent = sector.label;
+  selectedSector = sector.label;
 });
