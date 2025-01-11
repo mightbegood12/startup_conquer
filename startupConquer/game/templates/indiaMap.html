@@ -7,6 +7,7 @@ Game
 {% block content %}
 <!-- map area -->
 <div class="w-full h-[90vh] flex flex-row justify-center items-center gap-4">
+  <!-- map -->
   <div class="flex flex-col w-[50%] justify-center bg-[#1C2127]/[0.75] h-[90%] rounded-[4rem] shadow-sm shadow-yellow-400" style="position: relative">
     <?xml version="1.0" encoding="utf-8"?>
     <svg
@@ -231,7 +232,46 @@ Game
       </g>
     </svg>
   </div>
-  <div class="flex flex-col w-[20%] justify-center bg-[#1C2127]/[0.75] h-[90%] rounded-[4rem] shadow-sm shadow-yellow-400"></div>
+  <!-- stats -->
+  <div class="flex flex-col w-[20%] justify-around items-center bg-[#1C2127]/[0.75] h-[90%] rounded-[4rem] shadow-sm shadow-yellow-400">
+    <div class="heading text-2xl text-[#fcda05]">STATS</div>
+    <div class="border w-[80%] h-max text-white border-[#fcda05] border-[2px] flex flex-col gap-2 shadow-lg shadow-[#fcda05] rounded-2xl p-4">
+      <div class="flex flex-col gap-2">
+        <div class="flex flex-row justify-between">States/Union Teritories Conquered<span id="state-conquered-len">0/35</span></div>
+        <div class="">
+          <progress value="0" max="35" class="w-full relative rounded-xl h-2 transtion-all duration-300 rounded-xl" id="state-conquered-bar"></progress>
+        </div>
+      </div>
+      <!-- <div class="flex flex-col gap-2">
+        <div class="flex flex-row justify-between">States Conquered<span id="state-conquered-len">3/35</span></div>
+        <div class="">
+          <progress value="12" max="35" class="w-full relative rounded-xl h-2 transtion-[width] duration-300 rounded-xl" id="state-conquered-bar"></progress>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="flex flex-row justify-between">States Conquered<span id="state-conquered-len">3/35</span></div>
+        <div class="">
+          <progress value="9" max="35" class="w-full relative rounded-xl h-2 transtion-[width] duration-300 rounded-xl" id="state-conquered-bar"></progress>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="flex flex-row justify-between">States Conquered<span id="state-conquered-len">3/35</span></div>
+        <div class="">
+          <progress value="20" max="35" class="w-full relative rounded-xl h-2 transtion-[width] duration-300 rounded-xl" id="state-conquered-bar"></progress>
+        </div>
+      </div> -->
+    </div>
+    <div>
+      <button id="abort-btn" type="submit" class="group self-center relative text-2xl h-12 w-32 text-center p-2 cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] overflow-hidden rounded-full border border-[#FCDA05] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-[Mohave]">
+        <span class="ease absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-[#FCDA05] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
+        <span class="ease relative text-white transition duration-300 group-hover:text-black uppercase">ABORT</span>
+      </button>
+      <button id="reset-btn" type="submit" class="group self-center relative text-2xl h-12 w-32 text-center p-2 cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] overflow-hidden rounded-full border border-[#FCDA05] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-[Mohave]">
+        <span class="ease absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-[#FCDA05] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
+        <span class="ease relative text-white transition duration-300 group-hover:text-black uppercase">RESET</span>
+      </button>
+    </div>
+  </div>
 </div>
 <!-- spin the wheel -->
 <div id="spin-the-wheel-section" class="hidden fixed top-0 right-0 left-0 flex flex-col items-center justify-center z-40 bg-black/[0.75] w-full h-full">
@@ -240,7 +280,7 @@ Game
     <div class="cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer]" id="spin">SPIN</div>
   </div>
   <!-- selectedSector -->
-  <div class="hidden h-screen w-screen bg-black/[0.75] fixed flex flex-row items-center justify-center text-4xl text-white gap-4" id="sectorWrapper">
+  <div class="hidden h-screen w-screen bg-black/[0.75] fixed flex flex-col items-center justify-center text-4xl text-white gap-4" id="sectorWrapper">
   <div>Selected Sector:</div>
   <div id="selected-sector"></div>
   <button id="sector-pass" class="group relative text-2xl px-8 py-2 w-max text-center cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] overflow-hidden rounded-full border border-[#FCDA05] font-[Mohave] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80">
@@ -264,7 +304,7 @@ Game
     <button id="conquer-btn" type="submit" class="group relative text-2xl h-12 w-32 text-center p-2 cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] overflow-hidden rounded-full border border-[#FCDA05] focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 transition-all ease-in-out shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-[Mohave]">
       <span class="ease absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-[#FCDA05] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
       <span class="ease relative text-white transition duration-300 group-hover:text-black uppercase">CONQUER</span>
-  </button>
+    </button>
    </div>
 </div>
 

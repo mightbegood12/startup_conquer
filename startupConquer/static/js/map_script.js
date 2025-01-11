@@ -1,4 +1,4 @@
-const paths = document.querySelectorAll(".land");
+const states = document.querySelectorAll(".land");
 const tooltip = document.getElementById("tooltip");
 const questionWrapper = document.getElementById("question-wrapper");
 const sectorSelectedElement = document.getElementById("sector-selected");
@@ -6,31 +6,41 @@ const spinTheWheel = document.getElementById("spin-the-wheel-section");
 const sectorContinue = document.getElementById("sector-pass");
 const selectedSectorWrapper = document.querySelector("#sectorWrapper");
 const selectedSectorText = document.querySelector("#selected-sector");
+const stateConqueredProgress = document.getElementById("state-conquered-bar");
+const stateLen = document.getElementById("state-conquered-len");
+const resetBtn = document.getElementById("reset-btn");
 let stateConquered = JSON.parse(sessionStorage.getItem("stateConquered")) || [];
+let gameScore = JSON.parse(sessionStorage.getItem("score")) || 0;
 let selectedSector;
 
 const keywords = ["hello", "map", "doodle"];
+// console.log(states.length); //35
+
+resetBtn.addEventListener("click", function () {
+  sessionStorage.clear();
+  location.reload();
+});
 
 //Map Logic
-paths.forEach((path) => {
-  path.addEventListener("mouseenter", function (event) {
+states.forEach((state) => {
+  state.addEventListener("mouseenter", function (event) {
     const title = event.target.getAttribute("title");
     tooltip.textContent = title;
     tooltip.style.display = "block";
     tooltip.style.left = event.pageX + "px";
     tooltip.style.top = event.pageY + 10 + "px";
   });
-  path.addEventListener("mousemove", function (event) {
+  state.addEventListener("mousemove", function (event) {
     // Reposition the tooltip as the mouse moves
     tooltip.style.left = event.pageX + "px";
     tooltip.style.top = event.pageY + 10 + "px";
   });
-  path.addEventListener("mouseleave", function () {
+  state.addEventListener("mouseleave", function () {
     tooltip.style.display = "none";
   });
-  path.addEventListener("click", function (e) {
-    if (!stateConquered.includes(e.target.getAttribute("title"))) {
-      stateConquered.push(e.target.getAttribute("title"));
+  state.addEventListener("click", function (e) {
+    if (!stateConquered.includes(e.target.getAttribute("id"))) {
+      stateConquered.push(e.target.getAttribute("id"));
       sessionStorage.setItem("stateConquered", JSON.stringify(stateConquered));
       console.log(stateConquered);
       // window.location.href = "http://127.0.0.1:8000/spinthewheel/";
@@ -43,16 +53,39 @@ paths.forEach((path) => {
       alert("Already Conquered!");
     }
   });
+  if (stateConquered.includes(state.getAttribute("id"))) {
+    state.style.fill = "#fcda05";
+    stateConqueredProgress.value = stateConquered.length;
+    stateLen.textContent = `${stateConquered.length}/35`;
+  }
 });
+
+//Keyword Match Function
+
+function compareKeywords(userInput, keywords) {
+  const matches = [];
+  userInput.forEach((input) => {
+    if (keywords.includes(input)) {
+      matches.push(input);
+    }
+  });
+  return matches;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded and parsed!");
   // You can safely manipulate DOM elements here
   document.getElementById("conquer-btn").addEventListener("click", function () {
     const userInput = document.getElementById("user-input");
-    const userSubmitValue = userInput.value;
-    if (keywords.includes(userSubmitValue)) {
+    const userSubmitValue = userInput.value.split(" ");
+    const keywordMatches = compareKeywords(userSubmitValue, keywords);
+    // console.log(userSubmitValue);
+    if (keywordMatches.length != 0) {
       questionWrapper.classList.toggle("hidden");
+      const score = keywordMatches.length;
+      gameScore += score;
+      sessionStorage.setItem("score", JSON.stringify(gameScore));
+      location.reload();
     } else {
       alert("Not a valid answer");
     }

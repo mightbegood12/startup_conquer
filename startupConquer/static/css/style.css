@@ -284,3 +284,22 @@ path:hover + .tooltip {
   flex-basis: 100%;
   flex: 1;
 }
+
+progress::-webkit-progress-bar {
+  background-color: #fcdb052e;
+  width: 100%;
+}
+progress {
+  background-color: #fcdb052e;
+}
+
+/* value: */
+progress::-webkit-progress-value {
+  background-color: #fcda05 !important;
+}
+progress::-moz-progress-bar {
+  background-color: #fcda05 !important;
+}
+progress {
+  color: #fcda05;
+}
