@@ -11,6 +11,7 @@ const stateLen = document.getElementById("state-conquered-len");
 const resetBtn = document.getElementById("reset-btn");
 let stateConquered = JSON.parse(sessionStorage.getItem("stateConquered")) || [];
 let gameScore = JSON.parse(sessionStorage.getItem("score")) || 0;
+let recentState = JSON.parse(sessionStorage.getItem("recentState")) || "";
 let selectedSector;
 
 const keywords = ["hello", "map", "doodle"];
@@ -41,6 +42,8 @@ states.forEach((state) => {
   state.addEventListener("click", function (e) {
     if (!stateConquered.includes(e.target.getAttribute("id"))) {
       stateConquered.push(e.target.getAttribute("id"));
+      recentState = e.target.getAttribute("title");
+      sessionStorage.setItem("recentState", JSON.stringify(recentState));
       sessionStorage.setItem("stateConquered", JSON.stringify(stateConquered));
       console.log(stateConquered);
       // window.location.href = "http://127.0.0.1:8000/spinthewheel/";
@@ -95,6 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
     questionWrapper.classList.toggle("hidden"); //unhides
     sectorSelectedElement.textContent = selectedSector;
   });
+  document.getElementById("recent-state").textContent =
+    recentState || "No State Conquered!";
+  document.getElementById("game-score").textContent = gameScore || 0;
 });
 
 // SPIN THE WHEEL

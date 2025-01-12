@@ -32,7 +32,7 @@ var rotated = false;
 let [navigation] = performance.getEntriesByType("navigation");
 if (navigation && navigation.type === "navigate") {
   let urlHref = window.location.pathname;
-  console.log(urlHref);
+  // console.log(urlHref);
   if (urlHref.includes("/leaderboard/")) {
     document.getElementById("leaderboard").classList.add("active");
   } else if (urlHref.includes("/about/")) {
