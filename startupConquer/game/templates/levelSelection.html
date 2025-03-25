@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block title %} Level Selection {% endblock %} {%
+load static %} {% block content %}
+<div>
+  <div class="flex flex-row mt-10 items-center justify-center">
+    <h1 class="font-bold text-5xl font-[Mohave] p-2 text-white">
+      WHICH REGION YOU WANT TO CONQUER?
+    </h1>
+    <img
+      src="{% static 'img/svg/titleDesign.svg' %}"
+      alt="titleDesign"
+      class="w-12 h-12"
+    />
+  </div>
+  <div
+    class="h-[60vh] m-4 md:w-[60vw] rounded-lg relative md:rounded-tr-[10rem] md:rounded-bl-[10rem] text-3xl flex bg-[#1C2127]/[0.75] flex-col mt-8 p-8 items-center justify-center"
+  >
+    <div class="w-full h-full flex flex-row gap-2 items-center justify-around">
+      <a
+        href="/game/indiaMap"
+        class="cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] hover:scale-105 transform transition-all ease-in-out duration-300"
+      >
+        <img
+          class="p-4 w-[20rem] h-[20rem] border border-[#fcda05] border-[2px] rounded-xl"
+          src="{% static 'img/svg/indiaOutline.svg' %}"
+          alt=""
+        />
+      </a>
+      <button
+        onclick="alert('Not yet Unlocked')"
+        class="cursor-[url('{% static 'img/svg/mouse_cursor_pointer.svg' %}'),_pointer] hover:scale-105 transform transition-all ease-in-out duration-300"
+      >
+        <img
+          class="p-4 w-[20rem] h-[20rem] opacity-25 border border-[#fcda05] border-[2px] rounded-xl"
+          src="{% static 'img/svg/tamilnaduOutline.svg' %}"
+          alt=""
+        />
+      </button>
+    </div>
+    <!-- <div class="absolute bottom-[80px] -right-[220px] -z-10 flex flex-col rotate-[135deg] gap-4 items-center justify-center">
+            <span class="w-[16rem] h-10 bg-gradient-to-r from-[#fcda05] to-[#c29400] rounded-full" id="moveBlck"></span>
+            <span class="w-[36rem] h-10 bg-gradient-to-r from-[#fcda05] to-[#c29400] rounded-full"></span>
+        </div> -->
+  </div>
+</div>
+{% endblock%} {% block script %} {% endblock %}
