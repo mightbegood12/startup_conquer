@@ -9,6 +9,7 @@ const selectedSectorText = document.querySelector("#selected-sector");
 const stateConqueredProgress = document.getElementById("state-conquered-bar");
 const stateLen = document.getElementById("state-conquered-len");
 const resetBtn = document.getElementById("reset-btn");
+const abortBtn = document.getElementById("abort-btn");
 let stateConquered = JSON.parse(sessionStorage.getItem("stateConquered")) || [];
 let gameScore = JSON.parse(sessionStorage.getItem("score")) || 0;
 let recentState = JSON.parse(sessionStorage.getItem("recentState")) || "";
@@ -20,6 +21,10 @@ const keywords = ["hello", "map", "doodle"];
 resetBtn.addEventListener("click", function () {
   sessionStorage.clear();
   location.reload();
+});
+
+abortBtn.addEventListener("click", function () {
+  window.location.href = "/levelselection/";
 });
 
 //Map Logic
