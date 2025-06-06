@@ -9,6 +9,8 @@ pip install -r requirements.txt
 cd theme/static_src
 npm install
 cd ../../
+echo "NPM path is: $(which npm)"
+which npm
 
 # Build Tailwind CSS for production
 python manage.py tailwind build
