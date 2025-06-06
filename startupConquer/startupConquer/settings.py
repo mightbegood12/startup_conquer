@@ -141,7 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+NPM_BIN_PATH = "/usr/bin/npm"  # or just "npm" if globally available
 
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 
