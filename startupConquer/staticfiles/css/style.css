@@ -1,0 +1,305 @@
+/* Default state styles */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&display=swap");
+
+:root {
+  --variable4: #fcda05;
+}
+
+*::selection {
+  background-color: #fcda05;
+  color: black;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fcda05;
+  border-radius: 10px;
+}
+
+body {
+  background-color: #222831;
+  overflow-x: hidden;
+}
+
+.heading {
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.land {
+  fill: #343434; /* Default grey color */
+  fill-opacity: 1;
+  stroke: black; /* Black border */
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+  box-shadow: 31px 31px 35px rgba(220, 80, 130, 1); /* Small box-shadow */
+  transition: fill 0.3s, box-shadow 0.3s; /* Smooth transition for color and box-shadow */
+}
+
+/* Hover effect - change color */
+.land:hover {
+  fill: var(--variable4); /* Replace with your specific variable or color */
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+  transform: scale(1.008);
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+  box-shadow: 10px 5px 5px #fcda05;
+}
+
+/* Style for custom tooltip */
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 100;
+}
+
+path:hover + .tooltip {
+  display: block;
+}
+
+#IN-AN,
+#IN-AP,
+#IN-AR,
+#IN-AS,
+#IN-BR,
+#IN-CH,
+#IN-CT,
+#IN-DD,
+#IN-DL,
+#IN-DN,
+#IN-GA,
+#IN-GJ,
+#IN-HP,
+#IN-HR,
+#IN-JH,
+#IN-JK,
+#IN-KA,
+#IN-KL,
+#IN-LD,
+#IN-MH,
+#IN-ML,
+#IN-MN,
+#IN-MP,
+#IN-MZ,
+#IN-NL,
+#IN-OR,
+#IN-PB,
+#IN-PY,
+#IN-RJ,
+#IN-SK,
+#IN-TG,
+#IN-TN,
+#IN-TR,
+#IN-UP,
+#IN-UT,
+#IN-WB {
+}
+
+#menu-item {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: width 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+
+#menu-item.open {
+  width: 100vw;
+  height: 100vh;
+  /* margin-top: 10vh; */
+  visibility: visible;
+  opacity: 1;
+  transition: width 0.3s ease-in-out, visibility 0s 0s, opacity 0.3s ease-in-out;
+}
+
+.wave {
+  background-repeat: repeat-x;
+  position: absolute;
+  transform: translate(0, 0, 0);
+  animation: wave 8s ease-in-out infinite;
+}
+
+.wave2 {
+  animation: wave 5s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: -1600px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+#dd-content-1,
+#dd-content-2,
+#dd-content-3,
+#dd-content-4,
+#dd-content-5 {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+#leaderboard.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+#login.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+#about.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+#register.active {
+  background: #fcda05;
+  color: black !important;
+  height: 4rem;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s,
+    opacity 0.3s ease-in-out;
+}
+
+#moveBlck {
+  animation: moveInfinite 4s ease-in-out infinite;
+}
+
+@keyframes moveInfinite {
+  0% {
+    width: 10rem;
+    margin-left: 300px;
+  }
+  25% {
+    width: 16rem;
+  }
+  50% {
+    width: 10rem;
+    margin-left: -300px;
+  }
+  75% {
+    width: 16rem;
+  }
+  100% {
+    width: 10rem;
+    margin-left: 300px;
+  }
+}
+
+#toggle-eye {
+  width: 0px;
+  height: 2px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle-eye.shown {
+  width: 22px;
+  height: 2px;
+  opacity: 1;
+  visibility: visible;
+}
+
+#spin_the_wheel {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+#wheel {
+  display: block;
+}
+
+#spin {
+  font-size: larger;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  margin: -15%;
+  /* background: #fff;
+  color: #fff; */
+  box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+#spin::after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  border: 10px solid transparent;
+  border-bottom-color: currentColor;
+  border-top: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #fcdb052e;
+  width: 100%;
+}
+progress {
+  background-color: #fcdb052e;
+}
+
+/* value: */
+progress::-webkit-progress-value {
+  background-color: #fcda05 !important;
+}
+progress::-moz-progress-bar {
+  background-color: #fcda05 !important;
+}
+progress {
+  color: #fcda05;
+}

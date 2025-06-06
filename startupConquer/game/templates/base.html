@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static tailwind_tags %}
 <html lang="en" class="cursor-[url('{% static 'img/svg/mouse_cursor.svg' %}'),auto]">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- <link rel="stylesheet" href="https://unpkg.com/@sjmc11/tourguidejs/dist/css/tour.min.css"> -->
     <link rel="icon" href="{% static 'img/svg/logo.svg' %}" type="image/gif" sizes="16x16"> 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}"> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script>   -->
+     {% tailwind_css %}
   </head>
   <body class="min-h-screen bg-[url('{% static 'img/img/stars-bg.png' %}')] bg-cover bg-center bg-no-repeat bg-[#222831] flex flex-col ">
     <!-- Navbar Section  -->
